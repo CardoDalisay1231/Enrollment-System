@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.css";
 import { Link, useLocation } from "react-router-dom";
 
 function RegForm() {
@@ -17,7 +16,7 @@ function RegForm() {
   return (
     <div>
       <div className="header">
-        <Link to="/apps">
+        <Link to="/">
           <img
             src="./images/cvsu-logo.png"
             alt="University Logo"

@@ -15,7 +15,7 @@ export default function Register() {
   return (
     <div>
       <div class="header">
-        <Link to="/apps">
+        <Link to="/">
           <img
             src="./images/cvsu-logo.png"
             alt="University Logo"

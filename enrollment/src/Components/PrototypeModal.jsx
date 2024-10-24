@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./PrototypeModal.css";
 
 function PrototypeModal() {
   const [showModal, setShowModal] = useState(false);
@@ -18,11 +17,11 @@ function PrototypeModal() {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLongTitle">
-                  Prototype Warning
+                  Prototype Warning ! ! ! ! ! !
                 </h5>
                 <button
                   type="button"
-                  className="closed"
+                  className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                   onClick={handleClose}

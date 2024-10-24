@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.css"; // Assuming we use SCSS for styling
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -155,7 +154,7 @@ export default function RegFormPt2() {
   return (
     <div>
       <div className="header">
-        <Link to="/apps">
+        <Link to="/">
           <img
             src="./images/cvsu-logo.png"
             alt="University Logo"
