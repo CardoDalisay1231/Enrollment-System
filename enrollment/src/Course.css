@@ -1,0 +1,27 @@
+#Course {
+    position: relative;
+    height:  100%;
+
+}
+.details-containers {
+    padding: 1.5rem;
+    background: #17705433;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 4px 4px 5px 0px #00000040;
+    width: 90%; /* Set a percentage width for responsiveness */
+    max-width:60%; /* Set a maximum width to prevent it from being too wide */
+    margin: 0 auto;
+}
+.details-containers p{
+    font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+.details-containers:nth-child(1) {
+    margin-right: 10px; 
+}
+.details-containers:nth-child(2) { 
+    margin-left: 10px; 
+}
