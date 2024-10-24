@@ -19,7 +19,7 @@ function About() {
                 primarily provide advance instruction and professional training
                 in agriculture, science and technology, education and other
                 related fields, undertake research and extension services, and
-                provide progressive leadership in these areas.”
+                provide progressive leadership in these areass.”
               </p>
             </div>
             <div className="details-container">
