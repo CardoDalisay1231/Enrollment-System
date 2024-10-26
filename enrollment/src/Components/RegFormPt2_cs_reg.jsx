@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-export default function RegFormPt2() {
+export default function RegFormPt2_cs_reg() {
   // State for uploaded files (COG and E-signature)
   const location = useLocation();
   const { yearLevel, department } = location.state;
@@ -152,20 +152,20 @@ export default function RegFormPt2() {
   };
 
   return (
-    <div>
-      <div className="header">
-        <Link to="/">
-          <img
-            src="./images/cvsu-logo.png"
-            alt="University Logo"
-            className="logo"
-          />
-        </Link>
-        <p className="title">
-          CAVITE STATE UNIVERSITY <br /> BACOOR CAMPUS
-        </p>
-      </div>
-      <div className="regform">
+    <div className="containers">
+    <div className="header">
+      <Link to="/">
+        <img
+          src="./images/cvsu-logo.png"
+          alt="University Logo"
+          className="logo"
+        />
+      </Link>
+      <p>
+        CAVITE STATE UNIVERSITY <br /> BACOOR CAMPUS
+      </p>
+    </div>
+      <div className="form-container cs-form">
         <h2 className="form-title">REGULAR FORM</h2>
 
         <div className="form-section">
@@ -216,11 +216,17 @@ export default function RegFormPt2() {
                     <td>{course.unit}</td>
                     <td>{course.title}</td>
                     <td>
-                      <input type="text" placeholder="Grade" />
-                    </td>
-                    <td>
-                      <input type="text" placeholder="Faculty" />
-                    </td>
+                    <input
+                      type="number"
+                      id="grade"
+                      placeholder="Grade"
+                      min="0"
+                      step="any"
+                    />
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Faculty" id="faculty"/>
+                  </td>
                   </tr>
                 ))}
               </tbody>

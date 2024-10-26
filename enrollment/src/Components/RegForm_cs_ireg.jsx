@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 
-function RegForm() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const location = useLocation(); // Access the location hook
+function RegForm_cs_ireg() {
+  const location = useLocation();
   const { yearLevel, department } = location.state;
+  const studentType = "Irreg"; // Since this is RegForm-cs-reg
+  const navigate = useNavigate();
 
-  const handleImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      // Instantly display the image
-      setSelectedImage(URL.createObjectURL(event.target.files[0]));
-    }
+  const handleSubmit = () => {
+    let route = `/regformpt2-${department}-${studentType}`;
+    navigate(route, { state: { yearLevel, department } });
   };
 
   return (
-    <div>
+    <div className="containers">
       <div className="header">
         <Link to="/">
           <img
@@ -23,12 +22,12 @@ function RegForm() {
             className="logo"
           />
         </Link>
-        <p className="title">
+        <p>
           CAVITE STATE UNIVERSITY <br /> BACOOR CAMPUS
         </p>
       </div>
-      <div className="form-container">
-        <h2>REGULAR FORM</h2>
+      <div className="regform cs-form">
+        <h2>IRREGULAR FORM</h2>
 
         <section className="form-section">
           <div className="image-upload-container">
@@ -36,17 +35,7 @@ function RegForm() {
               type="file"
               id="imageUpload"
               accept="image/*"
-              onChange={handleImageChange}
             />
-            {selectedImage && (
-              <div className="image-preview">
-                <img
-                  src={selectedImage}
-                  alt="Uploaded"
-                  style={{ maxWidth: "100px", maxHeight: "100px" }}
-                />
-              </div>
-            )}
           </div>
         </section>
         <section className="form-section">
@@ -96,17 +85,13 @@ function RegForm() {
         </section>
 
         <div className="button-container">
-          <Link
-            to="/regformpt2"
-            state={{ yearLevel: yearLevel, department: department }}
-          >
-            {/* Pass both yearLevel and department to RegFormPt2 */}
-            <button type="submit">Submit</button>
-          </Link>
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-export default RegForm;
+export default RegForm_cs_ireg;

@@ -1,19 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [yearLevel, setYearLevel] = useState("");
   const [department, setDepartment] = useState("");
+  const [studentType, setStudentType] = useState(""); // Add state for student type
+  const navigate = useNavigate();
 
   const handleYearLevelChange = (event) => {
     setYearLevel(event.target.value); // Just update the state here
   };
   const handleDepartmentChange = (event) => {
     setDepartment(event.target.value); // Update state with selected department
-};
+  };
+  const handleStudentTypeChange = (event) => {
+    setStudentType(event.target.value); // Update state with selected student type
+  };
+
+  const handleSubmit = () => {
+    // Construct the route based on department and studentType
+    let route = `/regform-${department}-${studentType.toLowerCase()}`;
+    navigate(route, { state: { yearLevel, department } });
+  };
 
   return (
-    <div>
+    <div className="containers">
       <div class="header">
         <Link to="/">
           <img
@@ -22,7 +33,7 @@ export default function Register() {
             className="logo"
           />
         </Link>
-        <p className="title">
+        <p>
           CAVITE STATE UNIVERSITY <br />
           BACOOR CAMPUS
         </p>
@@ -67,7 +78,7 @@ export default function Register() {
                 Bachelor of Science in Information Technology
               </option>
             </select>
-            <select id="student-type">
+            <select id="student-type" value={studentType} onChange={handleStudentTypeChange}>
               <option value="" disabled selected>
                 Student Type
               </option>
@@ -76,13 +87,9 @@ export default function Register() {
               <option value="Transferee">Transferee Student</option>
             </select>
 
-            <Link
-              to="/regform"
-              state={{ yearLevel: yearLevel, department: department }}
-            >
+            
               {/* Pass both yearLevel and department to RegForm */}
-              <button className="btn btn-block">Register</button>
-            </Link>
+              <button className="btn btn-block" onClick={handleSubmit}>Register</button>
             <p className="message">
               Already Have An Account?
               <Link to="/login">Login</Link>
