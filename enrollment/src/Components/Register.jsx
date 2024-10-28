@@ -24,6 +24,7 @@ export default function Register() {
   };
 
   return (
+    
     <div className="containers">
       <div class="header">
         <Link to="/">
@@ -38,6 +39,7 @@ export default function Register() {
           BACOOR CAMPUS
         </p>
       </div>
+      <section id="register">
       <div className="login-signup-form animated fadeinDown">
         <div className="form">
           <form>
@@ -97,6 +99,8 @@ export default function Register() {
           </form>
         </div>
       </div>
+      </section>
     </div>
+   
   );
 }

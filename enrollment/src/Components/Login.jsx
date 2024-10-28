@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
+
+    
     <div className="containers">
       <div className="header">
       <Link to="/"><img src="./images/cvsu-logo.png" alt="University Logo" className="logo" /></Link>
         <p>CAVITE STATE UNIVERSITY <br /> BACOOR CAMPUS</p>
       </div>
-      
+      <section id="login">
       <div className="login-signup-form">
         <div className="form">
           <form>
@@ -21,6 +23,8 @@ export default function Login() {
           </form>
         </div>
       </div>
+      </section>
     </div>
+    
   );
 }

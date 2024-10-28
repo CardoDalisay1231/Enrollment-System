@@ -7,6 +7,8 @@ html,
   margin: 0;
   background-color: #d9d9d9d9;
 }
+
+
 * {
   margin: 0;
   padding: 0;
@@ -200,7 +202,6 @@ html,
 #about {
   position: relative;
   justify-content: center;
-  height: 90vh;
 }
 
 .about-containers {
@@ -257,7 +258,6 @@ html,
 #Course {
   position: relative;
   justify-content: center;
-  height: 70vh;
 }
 
 .course-content {
@@ -284,7 +284,9 @@ html,
 
 /* Login/Signup forms */
 .login-signup-form {
-  height: 80vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 80vh; 
   display: flex;
   justify-content: center;
   align-items: center;

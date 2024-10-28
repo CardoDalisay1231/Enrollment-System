@@ -10,9 +10,6 @@
   #projects {
     height: fit-content;
   }
-  .course-content {
-    margin-top: 20vh;
-  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -37,9 +34,6 @@
   .section-container {
     height: fit-content;
   }
-  section {
-    margin: 0 5%;
-  }
   .section__pic-container {
     width: 275px;
     height: 275px;
@@ -48,12 +42,12 @@
   .about-containers {
     margin-top: 0;
   }
-  .course-content {
-    margin-top: 70vh;
-  }
 }
 
 @media screen and (max-width: 600px) {
+  #about, #Course {
+    height: fit-content;
+  }
   #contact,
   footer {
     height: 40vh;
@@ -137,10 +131,9 @@
   }
   .course-content {
     padding: 50px 20px;
-    margin-top: 60vh;
   }
   .navbar .nav-name{
-    font-size: 30px;
+    font-size: 25px;
   }
   .modal-headers {
     padding: 1rem 0 2rem ;
@@ -165,13 +158,13 @@
   width: 80%;
   margin: auto;
 }
-.regform {
+.regform,.form-container {
   width: 90%;
   margin: auto;
   font-size: 10px;
   font-weight: bold;
 }
-.regform h2{
+.regform h2,.form-title{
   font-size: 25px;
 }
 .form-container{
